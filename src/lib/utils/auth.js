@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import NavigationService from '../../navigation/NavigationServices';
 
 export const getAuth = async () => {
   try {
@@ -15,12 +16,12 @@ export const setAuth = async auth => {
   return authVal;
 };
 
-// export const logOut = async () => {
-//   try {
-//     await AsyncStorage.removeItem('auth');
-//     NavigationService.navigate('Login');
-//     return true;
-//   } catch (error) {
-//     return false;
-//   }
-// };
+export const logOut = async () => {
+  try {
+    await AsyncStorage.removeItem('auth');
+    NavigationService.navigate('Login');
+    return true;
+  } catch (error) {
+    return false;
+  }
+};

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import AsyncStorage from '@react-native-community/async-storage';
 import Config from 'react-native-config';
 import {getToken, logOut} from 'utils/auth';
 
@@ -34,5 +35,4 @@ const api_call = async (method, url, requestParams = {}) => {
     }
   }
 };
-
 export default api_call;
