@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, StyleSheet, Text, Button} from 'react-native';
+import {View, StyleSheet, Text, Button, TouchableOpacity} from 'react-native';
 
 const SignIn = props => {
   const {navigation} = props;
@@ -9,7 +9,7 @@ const SignIn = props => {
   // Render
   return (
     <View style={styles.container}>
-      <Text>SignIn</Text>
+      <Text style={styles.title}>SignIn</Text>
       <View style={styles.buttonContainer}>
         <Button
           title="Forgot Password"
@@ -21,6 +21,11 @@ const SignIn = props => {
           title="Reset Password"
           onPress={() => navigation.navigate('ResetPassword')}
         />
+      </View>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={() => navigation.navigate('Onboarding')}>
+          <Text>Register</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -34,6 +39,12 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     marginVertical: 20,
+  },
+  title: {
+    fontSize: 36,
+  },
+  transparentButton: {
+    backgroundColor: 'transparent',
   },
 });
 
