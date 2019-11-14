@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import {getAuth} from 'utils/auth';
 import {minSplashTime} from 'configs/splash';
 
 const Splash = props => {
+  StatusBar.setHidden(true);
+
   // Props
   const {navigation} = props;
   // Mount
@@ -31,7 +33,7 @@ const Splash = props => {
   // Render
   return (
     <View style={styles.container}>
-      <Text>Loading...</Text>
+      <Text style={styles.text}>Welcome!</Text>
     </View>
   );
 };
@@ -41,6 +43,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#333',
+  },
+  text: {
+    color: 'white',
+    fontSize: 36,
   },
 });
 

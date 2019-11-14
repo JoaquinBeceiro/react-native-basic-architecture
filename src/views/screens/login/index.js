@@ -10,12 +10,18 @@ const SignIn = props => {
   return (
     <View style={styles.container}>
       <Text>SignIn</Text>
-      <Button
-        title="Forgot"
-        onPress={() => {
-          const nav = navigation.navigate('ForgotPassword');
-        }}
-      />
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Forgot Password"
+          onPress={() => navigation.navigate('ForgotPassword')}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Reset Password"
+          onPress={() => navigation.navigate('ResetPassword')}
+        />
+      </View>
     </View>
   );
 };
@@ -25,6 +31,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonContainer: {
+    marginVertical: 20,
   },
 });
 
